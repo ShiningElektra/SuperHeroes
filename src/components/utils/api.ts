@@ -63,10 +63,3 @@ export async function getCharacter(id: number) {
   const character = convertToCharacter(result);
   return character;
 }
-
-export async function getCharacterCount() {
-  const response = await fetch(
-    `https://www.superheroapi.com/api.php/10224252723775119`
-  );
-  const result = (await response.json()) as APICharacters;
-}
