@@ -38,6 +38,7 @@ export function createCard({ image, name, powerstats, biography }) {
             childs: [
               createElement("h2", {
                 className: "heroname",
+                innerText: name,
               }),
               createElement("img", {
                 className: "card__pic",
@@ -46,6 +47,11 @@ export function createCard({ image, name, powerstats, biography }) {
               }),
               createElement("div", {
                 className: "card__info",
+                innerText: powerstats,
+              }),
+              createElement("div", {
+                className: "card__info",
+                innerText: biography,
               }),
             ],
           }),
@@ -71,6 +77,7 @@ export function createCard({ image, name, powerstats, biography }) {
             childs: [
               createElement("h2", {
                 className: "heroname",
+                innerText: name,
               }),
               createElement("img", {
                 className: "card__pic",
@@ -79,15 +86,20 @@ export function createCard({ image, name, powerstats, biography }) {
               }),
               createElement("div", {
                 className: "card__info",
+                innerText: powerstats,
               }),
               createElement("div", {
-                className: "card__back",
-                childs: [
-                  createElement("div", {
-                    className: "card__back--p",
-                    innerText: `You won!`,
-                  }),
-                ],
+                className: "card__info",
+                innerText: biography,
+              }),
+            ],
+          }),
+          createElement("div", {
+            className: "card__back",
+            childs: [
+              createElement("div", {
+                className: "card__back--p",
+                innerText: `You won!`,
               }),
             ],
           }),
