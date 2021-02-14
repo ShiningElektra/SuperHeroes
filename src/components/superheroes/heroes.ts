@@ -43,15 +43,19 @@ export function createCard({ image, name, powerstats, biography }) {
               createElement("img", {
                 className: "card__pic",
                 alt: "",
-                src: image,
+                src: image.url,
               }),
               createElement("div", {
                 className: "card__info",
-                innerText: powerstats,
+                innerText: "powerstats",
               }),
               createElement("div", {
                 className: "card__info",
-                innerText: biography,
+                innerText: powerstats.power,
+              }),
+              createElement("div", {
+                className: "card__info",
+                innerText: biography.publisher,
               }),
             ],
           }),
@@ -82,15 +86,19 @@ export function createCard({ image, name, powerstats, biography }) {
               createElement("img", {
                 className: "card__pic",
                 alt: "",
-                src: image,
+                src: image.url,
               }),
               createElement("div", {
                 className: "card__info",
-                innerText: powerstats,
+                innerText: "powerstats",
               }),
               createElement("div", {
                 className: "card__info",
-                innerText: biography,
+                innerText: powerstats.power,
+              }),
+              createElement("div", {
+                className: "card__info",
+                innerText: biography.publisher,
               }),
             ],
           }),
