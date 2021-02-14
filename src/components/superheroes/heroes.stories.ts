@@ -8,8 +8,12 @@ export default {
   parameters: { layout: "centered" },
 };
 
-export const RandomCharacterOne = () => {
-  const randomButtonOne = createElement("button", {
+function removeAllChilds(element) {
+  element.innerHTML = "";
+}
+
+export const RandomCharacter = () => {
+  const randomButton = createElement("button", {
     innerText: "Play",
     onclick: async () => {
       // Verify each step (alert, console.log)
@@ -17,25 +21,34 @@ export const RandomCharacterOne = () => {
       const random = Math.floor(Math.random() * 731) + 1;
       console.log({ random });
 
+      const randomTwo = Math.floor(Math.random() * 731) + 1;
+      console.log({ randomTwo });
+
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_number_between_two_values
       // 2) getCharacter from API
       const character = await getCharacter(random);
       console.log({ character });
 
-      // 3) create card
-      const randomCharacterCard = createCard(character);
+      const characterTwo = await getCharacter(randomTwo);
+      console.log({ characterTwo });
 
+      // 3) create card
+      const randomCharacterCardOne = createCard(character);
+      const randomCharacterCardTwo = createCard(characterTwo);
+
+      removeAllChilds(container);
+      container.innerHTML = "";
       // 4) append card
-      // container.append(randomCharacterCard);
+      container.append(randomCharacterCardOne, randomCharacterCardTwo);
       // 5) make sure to only display one character
       // parentNode.replaceChild(newNode, oldNode);
 
-      container.replaceChild(randomCharacterCard, container.lastChild);
+      // 6) feel awesome 🐱‍👤
     },
   });
   const container = createElement("div", {
     className: "container",
-    childs: [randomButtonOne, createElement("div", {})],
+    childs: [randomButton, createElement("div", {})],
   });
   return container;
 };
