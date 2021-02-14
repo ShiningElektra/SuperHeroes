@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@font-face {
+  font-family: "flash";
+  src: url("assets/Flash.ttf") format("truetype");
+  font-weight: normal;
+}
 
 *,
 *::after,
