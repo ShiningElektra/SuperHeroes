@@ -64,7 +64,6 @@ export function createCard({ image, name, powerstats, biography }) {
             childs: [
               createElement("div", {
                 className: "card__back--p",
-                innerText: `You lost!`,
               }),
             ],
           }),

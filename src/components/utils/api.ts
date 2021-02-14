@@ -46,7 +46,10 @@ function convertToCharacter(apiCharacter: APICharacter): Character {
       strength: apiCharacter.powerstats.strength,
       speed: apiCharacter.powerstats.speed,
       durability: apiCharacter.powerstats.durability,
-      power: apiCharacter.powerstats.power,
+      power:
+        apiCharacter.powerstats.power === null
+          ? 0
+          : apiCharacter.powerstats.power,
       combat: apiCharacter.powerstats.combat,
     },
     biography: {
