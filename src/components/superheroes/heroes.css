@@ -1,0 +1,23 @@
+.container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+
+.winner {
+  position: relative;
+  grid-column: 1/3;
+  background-color: gold;
+  color: crimson;
+  font-family: "flash";
+  font-size: 2rem;
+  transition: width 3s;
+  transition-timing-function: ease;
+  padding: 0.1em;
+}
+.card p {
+  grid-column: 1/3;
+  font-family: "flash";
+  font-size: 2rem;
+}

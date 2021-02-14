@@ -28,88 +28,31 @@ export function createCard({ image, name, powerstats, biography }) {
     className: "game",
     childs: [
       createElement("article", {
-        className: "leftcard",
+        className: "card",
         childs: [
-          createElement("div", {
-            className: "Player",
+          createElement("p", {
+            innerText: "Power Battle Game",
+          }),
+          createElement("h2", {
+            className: "card__heroname",
+            innerText: name,
+          }),
+          createElement("img", {
+            className: "card__pic",
+            alt: "",
+            src: image.url,
           }),
           createElement("div", {
-            className: "card__front",
-            childs: [
-              createElement("h2", {
-                className: "heroname",
-                innerText: name,
-              }),
-              createElement("img", {
-                className: "card__pic",
-                alt: "",
-                src: image.url,
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: "powerstats",
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: powerstats.power,
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: biography.publisher,
-              }),
-            ],
+            className: "card__info",
+            innerText: "Power",
           }),
           createElement("div", {
-            className: "card__back",
-            childs: [
-              createElement("div", {
-                className: "card__back--p",
-                innerText: `You lost!`,
-              }),
-            ],
-          }),
-        ],
-      }),
-      createElement("article", {
-        className: "leftcard",
-        childs: [
-          createElement("div", {
-            className: "Player",
+            className: "card__info",
+            innerText: powerstats.power,
           }),
           createElement("div", {
-            className: "card__front",
-            childs: [
-              createElement("h2", {
-                className: "heroname",
-                innerText: name,
-              }),
-              createElement("img", {
-                className: "card__pic",
-                alt: "",
-                src: image.url,
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: "powerstats",
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: powerstats.power,
-              }),
-              createElement("div", {
-                className: "card__info",
-                innerText: biography.publisher,
-              }),
-            ],
-          }),
-          createElement("div", {
-            className: "card__back",
-            childs: [
-              createElement("div", {
-                className: "card__back--p",
-                innerText: `You won!`,
-              }),
-            ],
+            className: "card__info",
+            innerText: biography.publisher,
           }),
         ],
       }),
