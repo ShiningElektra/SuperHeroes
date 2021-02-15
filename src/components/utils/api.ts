@@ -2,12 +2,12 @@ export type APICharacter = {
   id: number;
   name: string;
   powerstats: {
-    intelligence: number;
-    strength: number;
-    speed: number;
-    durability: number;
-    power: number;
-    combat: number;
+    intelligence: number | "null";
+    strength: number | "null";
+    speed: number | "null";
+    durability: number | "null";
+    power: number | "null";
+    combat: number | "null";
   };
   biography: {
     publisher: string;
@@ -24,12 +24,12 @@ export type Character = {
   };
   name: string;
   powerstats: {
-    intelligence: number;
-    strength: number;
-    speed: number;
-    durability: number;
-    power: number;
-    combat: number;
+    intelligence: number | "null";
+    strength: number | "null";
+    speed: number | "null";
+    durability: number | "null";
+    power: number | "null";
+    combat: number | "null";
   };
   biography: {
     publisher: string;
@@ -42,15 +42,30 @@ function convertToCharacter(apiCharacter: APICharacter): Character {
     id: apiCharacter.id,
     name: apiCharacter.name,
     powerstats: {
-      intelligence: apiCharacter.powerstats.power,
-      strength: apiCharacter.powerstats.strength,
-      speed: apiCharacter.powerstats.speed,
-      durability: apiCharacter.powerstats.durability,
+      intelligence:
+        apiCharacter.powerstats.intelligence === "null"
+          ? 0
+          : apiCharacter.powerstats.intelligence,
+      strength:
+        apiCharacter.powerstats.strength === "null"
+          ? 0
+          : apiCharacter.powerstats.strength,
+      speed:
+        apiCharacter.powerstats.speed === "null"
+          ? 0
+          : apiCharacter.powerstats.speed,
+      durability:
+        apiCharacter.powerstats.durability === "null"
+          ? 0
+          : apiCharacter.powerstats.durability,
       power:
-        apiCharacter.powerstats.power === null
+        apiCharacter.powerstats.power === "null"
           ? 0
           : apiCharacter.powerstats.power,
-      combat: apiCharacter.powerstats.combat,
+      combat:
+        apiCharacter.powerstats.combat === "null"
+          ? 0
+          : apiCharacter.powerstats.combat,
     },
     biography: {
       publisher: apiCharacter.biography.publisher,

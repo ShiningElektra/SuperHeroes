@@ -12,12 +12,9 @@ function removeAllChilds(element) {
   element.innerHTML = "";
 }
 
-const getWinner = createElement("div", {
-  className: "winner",
-});
-
 export const RandomCharacter = () => {
   const randomButton = createElement("button", {
+    className: "button__play",
     innerText: "Play",
     onclick: async () => {
       // Verify each step (alert, console.log)
@@ -41,8 +38,22 @@ export const RandomCharacter = () => {
       const randomCharacterCardTwo = createCard(characterTwo);
       // console.log(characterTwo.powerstats.power);
 
-      getWinner.innerText =
-        +character.powerstats.power > +characterTwo.powerstats.power
+      const winnerElement = createElement("div", {
+        className: "winner",
+      });
+      winnerElement.innerText =
+        +character.powerstats.combat +
+          +character.powerstats.durability +
+          +character.powerstats.intelligence +
+          +character.powerstats.power +
+          +character.powerstats.speed +
+          +character.powerstats.strength >
+        +character.powerstats.combat +
+          +character.powerstats.durability +
+          +character.powerstats.intelligence +
+          +character.powerstats.power +
+          +character.powerstats.speed +
+          +character.powerstats.strength
           ? "Player One wins!"
           : "Player Two wins!";
 
@@ -50,9 +61,10 @@ export const RandomCharacter = () => {
       container.innerHTML = "";
       // 4) append card
       container.append(
+        randomButton,
         randomCharacterCardOne,
         randomCharacterCardTwo,
-        getWinner
+        winnerElement
       );
       // 5) make sure to only display one character
       // parentNode.replaceChild(newNode, oldNode);
