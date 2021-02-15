@@ -44,12 +44,33 @@ export function createCard({ image, name, powerstats, biography }) {
           }),
           createElement("div", {
             className: "card__info",
-            innerText: "Power",
+            innerText: "Battle " + "total=" + powerstats,
           }),
           createElement("div", {
             className: "card__info",
-            innerText: powerstats.power,
+            innerText: "Power " + powerstats.power,
           }),
+          createElement("div", {
+            className: "card__info",
+            innerText: "Intelligence " + powerstats.intelligence,
+          }),
+          createElement("div", {
+            className: "card__info",
+            innerText: "Strength " + powerstats.strength,
+          }),
+          createElement("div", {
+            className: "card__info",
+            innerText: "Speed " + powerstats.speed,
+          }),
+          createElement("div", {
+            className: "card__info",
+            innerText: "Durability " + powerstats.durability,
+          }),
+          createElement("div", {
+            className: "card__info",
+            innerText: "Combat " + powerstats.combat,
+          }),
+
           createElement("div", {
             className: "card__info",
             innerText: biography.publisher,
